@@ -1,0 +1,30 @@
+---
+configuration:
+  config_filename: '../Config/sd_train_dataset_extraction.yaml'
+
+input_datasets:
+  train_dataset: '../../Data/datasets/1043_train.pkl'
+  valid_dataset: '../../Data/datasets/1043_valid.pkl'
+
+datasets: 
+  train_dataset: '../../Data/datasets/sd_1043_train.pkl'
+  test_dataset: '../../Data/datasets/sd_1043_test.pkl'
+  valid_dataset: '../../Data/datasets/sd_1043_valid.pkl'
+
+model_configuration:
+  model_name: 'CompVis/stable-diffusion-v1-4'
+  checkpoint: '../../Models/sd_v1_4_checkpoint.pt'
+  sample_size: 512
+  
+training_configuration:
+  lr: 0.000001
+  batch_size: 6
+  num_epochs: 500
+  factor: 14
+  test_step: 5
+
+wandb_configuration:
+  entity: ''
+  project: 'roadscene2vec'
+  
+output_dir: '../../Data/Outputs/'
