@@ -151,20 +151,19 @@ The table below shows original driving images alongside the corresponding images
 
 | Original | Generated |
 |:---:|:---:|
-| ![](Images/Initial/00004362.jpg) | ![](Images/Generated/00004362.jpg) |
-| ![](Images/Initial/00004368.jpg) | ![](Images/Generated/00004368.jpg) |
-| ![](Images/Initial/00056572.jpg) | ![](Images/Generated/00056572.jpg) |
-| ![](Images/Initial/00098349.jpg) | ![](Images/Generated/00098349.jpg) |
-| ![](Images/Initial/00098353.jpg) | ![](Images/Generated/00098353.jpg) |
-| ![](Images/Initial/00098372.jpg) | ![](Images/Generated/00098372.jpg) |
-| ![](Images/Initial/00634491.jpg) | ![](Images/Generated/00634491.jpg) |
-| ![](Images/Initial/00634522.jpg) | ![](Images/Generated/00634522.jpg) |
-| ![](Images/Initial/00634638.jpg) | ![](Images/Generated/00634638.jpg) |
-| ![](Images/Initial/00634651.jpg) | ![](Images/Generated/00634651.jpg) |
-| ![](Images/Initial/00634672.jpg) | ![](Images/Generated/00634672.jpg) |
-| ![](Images/Initial/00635704.jpg) | ![](Images/Generated/00635704.jpg) |
-| ![](Images/Initial/00635738.jpg) | ![](Images/Generated/00635738.jpg) |
-| ![](Images/Initial/00662022.jpg) | ![](Images/Generated/00662022.jpg) |
+| <img src="Images/Initial/00004368.jpg" width="80%"/> | <img src="Images/Generated/00004368.jpg"/> |
+| <img src="Images/Initial/00056572.jpg" width="80%"/> | <img src="Images/Generated/00056572.jpg"/> |
+| <img src="Images/Initial/00098349.jpg" width="80%"/> | <img src="Images/Generated/00098349.jpg"/> |
+| <img src="Images/Initial/00098353.jpg" width="80%"/> | <img src="Images/Generated/00098353.jpg"/> |
+| <img src="Images/Initial/00098372.jpg" width="80%"/> | <img src="Images/Generated/00098372.jpg"/> |
+| <img src="Images/Initial/00634491.jpg" width="80%"/> | <img src="Images/Generated/00634491.jpg"/> |
+| <img src="Images/Initial/00634522.jpg" width="80%"/> | <img src="Images/Generated/00634522.jpg"/> |
+| <img src="Images/Initial/00634638.jpg" width="80%"/> | <img src="Images/Generated/00634638.jpg"/> |
+| <img src="Images/Initial/00634651.jpg" width="80%"/> | <img src="Images/Generated/00634651.jpg"/> |
+| <img src="Images/Initial/00634672.jpg" width="80%"/> | <img src="Images/Generated/00634672.jpg"/> |
+| <img src="Images/Initial/00635704.jpg" width="80%"/> | <img src="Images/Generated/00635704.jpg"/> |
+| <img src="Images/Initial/00635738.jpg" width="80%"/> | <img src="Images/Generated/00635738.jpg"/> |
+| <img src="Images/Initial/00662022.jpg" width="80%"/> | <img src="Images/Generated/00662022.jpg"/> |
 
 ---
 
