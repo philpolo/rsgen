@@ -1,0 +1,4 @@
+pipeline/__pycache__/
+text2image/__pycache__/
+text2image/wandb/
+utils/__pycache__/
