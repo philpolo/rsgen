@@ -59,7 +59,7 @@ Key dependencies include:
 - `wandb` (training tracking)
 - `detectron2`, `fvcore` (object detection backbone)
 
-The project also depends on **GBSED** (Graph-Based Semantic Encoder-Decoder), which must be cloned and available at `../../gbsed` relative to this repository.
+The project also depends on **[GBSED](https://github.com/philpolo/gbsed)** (Graph-Based Semantic Encoder-Decoder), which must be cloned and available at `../../gbsed` relative to this repository.
 
 ---
 
