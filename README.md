@@ -26,7 +26,7 @@ rsgen/
 │   └── sd_train_dataset_extraction.yaml # Scene graph extraction & relation mapping
 ├── Images/
 │   ├── Initial/                        # Original driving images
-│   ├── Transmitted/                    # Images after wireless channel transmission
+│   ├── Transmitted/                    # Images after wireless channel transmission (These images have been compressed 64 times before transmission, then decompressed)
 │   ├── Generated/                      # Images generated from scene graph captions
 │   └── architecture/                   # System architecture diagram
 ├── pipeline/
