@@ -1,6 +1,6 @@
 # Towards a Joint Task-Oriented and Generative Semantic Communication Framework for 6G Networks
 
-This repository provides the implementation a joint task-oriented and generative semantic communication architecture that transmits semantic information instead of raw data, enabling both reliable downstream task execution and high-fidelity visual reconstruction under bandwidth-constrained wireless environments.
+This repository provides the implementation of a joint task-oriented and generative semantic communication architecture that transmits semantic information instead of raw data, enabling both reliable downstream task execution and high-fidelity visual reconstruction under bandwidth-constrained wireless environments.
 Unlike conventional communication systems that focus on bit-perfect delivery, the proposed approach preserves the meaning of the transmitted information by operating on semantic scene representations.
 
 ![System Architecture](Images/architecture/Sys_model.png)
