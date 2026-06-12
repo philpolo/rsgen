@@ -22,7 +22,6 @@ sys.path.append("../../")
 sys.path.append("..")
 sys.path.append("../Communication")
 
-from gbsed.pipeline.pipeline import GBSED
 from text2image.sd_trainer import Trainer
 from utils.datasetGenerator import sg2text
 
@@ -217,7 +216,7 @@ def main_parser():
     parser.add_argument(
         "--com_model_endpoint", 
         type=str, 
-        default="../../gbsed/Communication/weights/Neural_Demaper.h5", 
+        default="../Communication/weights/Neural_Demaper.h5", 
         help="Path to the communication model checkpoint."
     )
     
