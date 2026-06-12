@@ -310,7 +310,7 @@ class GBSED:
         received_bits = self._recover_original_bits_(
             b_hat, 
             initial_processed_sg['input_bits'].size
-        ).cpu().numpy()
+        ).numpy()
         received_bits = np.asarray(received_bits, dtype=np.uint8)
         return self._sg_reconstruction_(received_bits, initial_processed_sg), (end - start)
         
