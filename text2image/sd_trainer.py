@@ -20,6 +20,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image
 from diffusers import StableDiffusionPipeline
+from learning.rs2vec_training import rs_trainer
 
 parent = Path('..').resolve()
 sys.path.extend([
