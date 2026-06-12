@@ -19,8 +19,8 @@ import tensorflow as tf
 
 sys.path.append("..")
 sys.path.append("../../")
-sys.path.append("../../gbsed")
-sys.path.append("../../gbsed/Communication")
+sys.path.append("..")
+sys.path.append("../Communication")
 
 from gbsed.pipeline.pipeline import GBSED
 from text2image.sd_trainer import Trainer
