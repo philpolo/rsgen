@@ -1,6 +1,7 @@
-# rsgen
+# Towards a Joint Task-Oriented and Generative Semantic Communication Framework for 6G Networks
 
-**rsgen** is a road scene image generation module that fine-tunes [Stable Diffusion v1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4) on driving scene data. It converts structured scene graphs into natural-language captions and uses them to generate realistic road scene images. It is designed to plug into a semantic communications pipeline (GBSED) where scene graphs are transmitted wirelessly and images are reconstructed at the receiver from the decoded scene graph semantics.
+This repository provides the implementation a joint task-oriented and generative semantic communication architecture that transmits semantic information instead of raw data, enabling both reliable downstream task execution and high-fidelity visual reconstruction under bandwidth-constrained wireless environments.
+Unlike conventional communication systems that focus on bit-perfect delivery, the proposed approach preserves the meaning of the transmitted information by operating on semantic scene representations.
 
 ![System Architecture](Images/architecture/Sys_model.png)
 
@@ -8,12 +9,11 @@
 
 ## Overview
 
-The system operates end-to-end:
+The framework consists of two complementary semantic objectives:
 
-1. **Scene graph → text**: structured driving scene graphs (from [roadscene2vec](https://github.com/AICPS/roadscene2vec)) are converted to natural-language captions describing spatial relationships between road actors (cars, pedestrians, lanes, etc.).
-2. **Fine-tuned Stable Diffusion**: a Stable Diffusion UNet is fine-tuned on paired (caption, image) samples from the driving dataset, freezing the VAE and text encoder.
-3. **Wireless transmission simulation**: the original images are also passed through a physical-layer channel model (OFDM MIMO CDL) provided by the parent GBSED pipeline for comparison.
-4. **End-to-end pipeline**: the `phy_layer_enhancer` class orchestrates scene graph encoding/transmission, caption generation, image generation, and direct image transmission, writing results to disk and logging timing.
+. **Task-Oriented Semantic Communication:**: enables downstream inference, such as collision-risk estimation, directly from reconstructed semantic graphs.
+. **Generative Semantic Communication:**: reconstructs realistic road-scene images from the recovered semantic representation using diffusion models.
+By jointly optimizing these two objectives, the framework supports both machine intelligence and human interpretability.
 
 ---
 
@@ -21,21 +21,38 @@ The system operates end-to-end:
 
 ```
 rsgen/
-├── Config/
-│   ├── sd_finetuning.yaml              # Training & model configuration
-│   └── sd_train_dataset_extraction.yaml # Scene graph extraction & relation mapping
-├── Images/
-│   ├── Initial/                        # Original driving images
-│   ├── Transmitted/                    # Images after wireless channel transmission (These images have been compressed 64 times before transmission, then decompressed)
-│   ├── Generated/                      # Images generated from scene graph captions
-│   └── architecture/                   # System architecture diagram
-├── pipeline/
-│   └── pipeline.py                     # End-to-end phy_layer_enhancer pipeline
-├── text2image/
-│   └── sd_trainer.py                   # Stable Diffusion fine-tuning & inference
-├── utils/
-│   ├── datasetGenerator.py             # sg2text conversion + dataset classes
-└── requirements.txt
+│
+├── Communication/                  # End-to-end physical layer communication framework
+│   ├── e2emodel.py                 # OFDM MIMO end-to-end semantic communication model
+│   ├── receiver.py                 # Neural receiver implementation
+│   └── weights/
+│       └── Neural_Demaper.h5       # Pre-trained neural receiver weights
+│
+├── Config/                         # Configuration files
+│   ├── pipeline_extraction.yaml    # Scene graph extraction parameters
+│   ├── pipeline_learning.yaml      # Training and inference configuration
+│   └── *.yaml                      # Additional experiment configurations
+│
+├── learning/                       # Learning modules
+│   ├── rs2vec_training.py          # RoadScene2Vec model training
+│
+├── pipeline/                       # Main semantic communication pipeline
+│   ├── pipeline.py                 # Entry point of the framework
+│   ├── gbsed_core.py               # Core semantic communication engine
+│
+├── sgautoencoder/                  # Graph semantic encoder/decoder
+│   ├── sg_autoencoder.py           # Semantic graph autoencoder
+│
+├── text2image/                     # Generative semantic decoder
+│   ├── sd_trainer.py               # Stable Diffusion interface
+│
+├── utils/                          # General-purpose utilities
+│   ├── datasetGenerator.py         # Dataset creation and preprocessing
+│
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+└── LICENSE                         # License information
+
 ```
 
 ---
@@ -58,10 +75,6 @@ Key dependencies include:
 - `sionna >= 1.1` (wireless channel simulation)
 - `wandb` (training tracking)
 - `detectron2`, `fvcore` (object detection backbone)
-
-The project also depends on **[GBSED](https://github.com/philpolo/gbsed)** (Graph-Based Semantic Encoder-Decoder), which must be cloned and available at `../../gbsed` relative to this repository.
-
----
 
 ## Configuration
 
@@ -115,10 +128,10 @@ image.save("output.png")
 
 ```bash
 python pipeline/pipeline.py \
-  --extraction_filename ../../gbsed/Config/pipeline_extraction.yaml \
-  --learning_filename ../../gbsed/Config/pipeline_learning.yaml \
+  --extraction_filename ../Config/pipeline_extraction.yaml \
+  --learning_filename ../Config/pipeline_learning.yaml \
   --sd_config_filename Config/sd_finetuning.yaml \
-  --com_model_endpoint ../../gbsed/Communication/weights/neural_rx_ofdm_mimo_cdl_final.h5 \
+  --com_model_endpoint ../Communication/weights/Neural_Demaper.h5  \
   --time_file ../../Data/Outputs/transfer_times.csv
 ```
 
@@ -177,10 +190,6 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 If you use this work, please also cite:
 
-- [roadscene2vec](https://github.com/AICPS/roadscene2vec) for scene graph extraction
-- [Stable Diffusion](https://arxiv.org/abs/2112.10752) (Rombach et al., 2022)
-- [Sionna](https://nvlabs.github.io/sionna/) for the wireless channel simulation
 
 ---
 
-*Author: Phil Polo Ditsia Di Ngoma*
