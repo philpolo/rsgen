@@ -190,20 +190,20 @@ def main_parser():
     parser = argparse.ArgumentParser(
         description="The complete pipeline from scene graph extraction"\
             "semantic enconding, wireless communication, semantic decoding, "\
-            "to risk assessment or collision prediction."
+            "to collision prediction."
     )
         
     parser.add_argument(
         "--extraction_filename", 
         type=str, 
-        default="../../gbsed/Config/pipeline_extraction.yaml", 
+        default="../Config/pipeline_extraction.yaml", 
         help="Path to scene graph extraction configuration file."
     )
                                      
     parser.add_argument(
         "--learning_filename", 
         type=str,
-        default="../../gbsed/Config/pipeline_learning.yaml", 
+        default="../Config/pipeline_learning.yaml", 
         help="Path to the model learning configuration file."
     )
     
@@ -217,7 +217,7 @@ def main_parser():
     parser.add_argument(
         "--com_model_endpoint", 
         type=str, 
-        default="../../gbsed/Communication/weights/neural_rx_ofdm_mimo_cdl_final.h5", 
+        default="../../gbsed/Communication/weights/Neural_Demaper.h5", 
         help="Path to the communication model checkpoint."
     )
     
