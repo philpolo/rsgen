@@ -21,7 +21,7 @@ sys.path.append("..")
 sys.path.append("../../")
 sys.path.append("..")
 sys.path.append("../Communication")
-
+from pipeline.gbsed_core import GBSED
 from text2image.sd_trainer import Trainer
 from utils.datasetGenerator import sg2text
 
