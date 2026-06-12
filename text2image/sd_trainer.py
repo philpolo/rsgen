@@ -24,8 +24,7 @@ from diffusers import StableDiffusionPipeline
 parent = Path('..').resolve()
 sys.path.extend([
     os.path.dirname(sys.path[0]), 
-    str(parent), str(parent.parent), 
-    os.path.join(parent.parent, 'gbsed')])
+    str(parent), str(parent.parent)])
 
 from utils.datasetGenerator import ds_gen
 
