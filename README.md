@@ -190,6 +190,16 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 If you use this work, please also cite: Coming soon 
 
+[Towards a Joint Task-Oriented and Generative Semantic Communication Framework for 6G Networks](https://arxiv.org/pdf/2606.31426)
 
+```bibtex
+@article{ribouh2026towards,
+  title={Towards a Joint Task-Oriented and Generative Semantic Communication Framework for 6G Networks},
+  author={Ribouh, Soheyb and Di Ngoma, Phil Polo Ditsia},
+  journal={arXiv preprint arXiv:2606.31426},
+  year={2026}
+}
+
+```
 ---
 
